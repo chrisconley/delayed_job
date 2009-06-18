@@ -22,6 +22,9 @@ module Delayed
       trap('INT')  { say 'Exiting...'; $exit = true }
 
       loop do
+        if defined?(ActiveRecord)
+          ActiveRecord::Base.verify_active_connections!
+        end
         result = nil
 
         realtime = Benchmark.realtime do
