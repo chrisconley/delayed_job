@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/database'
+require 'spec_helper'
 
 describe Delayed::Manager do
   before do
