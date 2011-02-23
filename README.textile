@@ -225,7 +225,7 @@ This fork of delayed_job handles autoscaling of workers, either locally or on He
 
 * <code>gem install rush</code> (for local auto-scaling using the regular rake task)
 * Add the heroku gem to the .gems manifest (or if you're using Bundler, add it to your Gemfile)
-* Use <code>heroku config:add</code> to add these 3 keys: <code>HEROKU_USERNAME, HEROKU_PASSWORD, HEROKU_APP</code>.  These are used to launch the heroku client from your dyno in order to change the worker quantity.
+* Use <code>heroku config:add</code> to add these 3 keys: <code>HEROKU_USERNAME, HEROKU_PASSWORD, HEROKU_APP_NAME</code>.  These are used to launch the heroku client from your dyno in order to change the worker quantity.
 * Add an initializer (<code>autoscale_workers.rb</code>) to config/initializers:
 <pre><code>Delayed::Job.auto_scale = true
 if RAILS_ENV == 'production'
